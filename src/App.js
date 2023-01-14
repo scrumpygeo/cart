@@ -1,3 +1,4 @@
+import CartContainer from "./CartContainer";
 import Navbar from "./Navbar";
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
     <main >
       <Navbar />
       <div className="container">
-        <h2>App</h2>
+        <h2><CartContainer /></h2>
       </div>
 
     </main>
