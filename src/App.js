@@ -1,9 +1,14 @@
+import Navbar from "./Navbar";
 
 function App() {
   return (
-    <div className="container text-center" >
-      <h1>App</h1>
-    </div>
+    <main >
+      <Navbar />
+      <div className="container">
+        <h2>App</h2>
+      </div>
+
+    </main>
   );
 }
 
