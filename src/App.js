@@ -8,7 +8,6 @@ function App() {
       <div className="container">
         <h2><CartContainer /></h2>
       </div>
-
     </main>
   );
 }

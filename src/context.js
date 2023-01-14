@@ -1,5 +1,5 @@
-import { useState, useContext, useReducer, useEffect } from 'react'
-import cartItem from './data.js'
+import React, { useState, useContext, useReducer, useEffect } from 'react'
+import cartItems from './data.js'
 import reducer from './reducer'
 
 const AppContext = React.createContext()
@@ -7,17 +7,23 @@ const AppContext = React.createContext()
 const initialState = {
   loading: false,
   cart: cartItems,
-  totalCount: 0,
-  totalValue: 0
+  total: 0,
+  amount: 0
 }
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
+  // don't need async await as local file but use anyway as aide memoire
+  const fetchData = () => {
+    dispatch({ type: "DISPLAY_ITEMS", payload: cartItems })
+
+  }
+
   return (
-    <AppContext.Provider value={...state}>
-      {childrend}
-    </AppContext.Provider>
+    <AppContext.Provider value={{ ...state }}>
+      {children}
+    </AppContext.Provider >
   )
 }
 
