@@ -8,7 +8,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
       <img
         src={img}
         className="w-25"
-        alt=""
+        alt={title}
       />
       <div className="card-body d-flex justify-content-between ms-4">
         <div className="card-text">
