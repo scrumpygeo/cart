@@ -8,7 +8,7 @@ const CartContainer = () => {
   if (cart.length === 0) {
     return (
       <section>
-        <header>
+        <header className='text-center mb-5'>
           <h2>Your Cart</h2>
           <h4>is currently empty</h4>
         </header>
@@ -16,11 +16,11 @@ const CartContainer = () => {
     )
   }
   return (
-    <section>
-      <header>
+    <section  >
+      <header className="text-center mb-5">
         <h2>Your Cart Contents</h2>
 
-      </header>
+      </header >
       <div>
         {cart.map(item => {
           return <CartItem key={item.id} {...item} />
