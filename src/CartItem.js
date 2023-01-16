@@ -17,9 +17,9 @@ const CartItem = ({ id, img, title, price, amount }) => {
           <button className='border-0 bg-transparent'>remove</button>
         </div>
         <div className="buttons h-100 d-flex flex-column justify-content-between">
-          <button className="border-0 bg-transparent">&#8963;</button>
-          <p className="align-self-center">{amount}</p>
-          <button className="border-0 bg-transparent">&#709;</button>
+          <button className="border-0 bg-transparent fs-5 font-weight-bold  text-success">&#8963;</button>
+          <p className="align-self-center ">{amount}</p>
+          <button className="border-0 bg-transparent fs-5 font-weight-bold text-success">&#709;</button>
         </div>
       </div>
     </div>

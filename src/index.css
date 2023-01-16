@@ -8,3 +8,8 @@
   color: #111;
   font-weight: bold;
 }
+hr {
+  background: grey;
+  border-color: transparent;
+  border-width: 0.25px;
+}

@@ -8,7 +8,7 @@ const CartContainer = () => {
   if (cart.length === 0) {
     return (
       <section>
-        <header className='text-center mb-5'>
+        <header className='text-center my-5'>
           <h2>Your Cart</h2>
           <h4>is currently empty</h4>
         </header>
@@ -17,7 +17,7 @@ const CartContainer = () => {
   }
   return (
     <section  >
-      <header className="text-center mb-5">
+      <header className="text-center mt-2 mb-5">
         <h2>Your Cart Contents</h2>
 
       </header >
