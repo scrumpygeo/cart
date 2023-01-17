@@ -14,7 +14,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
       <div className="card-body d-flex justify-content-between ms-4">
         <div className="card-text">
           <h6>{title}</h6>
-          <p>£{price}</p>
+          <p>£{parseInt(price, 10).toLocaleString()}</p>
           <button className='border-0 bg-transparent text-danger' onClick={() => removeItem(id)}>Remove</button>
         </div>
         <div className="buttons h-100 d-flex flex-column justify-content-between">
