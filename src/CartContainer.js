@@ -3,7 +3,7 @@ import CartItem from './CartItem'
 import { useGlobalContext } from './context'
 
 const CartContainer = () => {
-  const { cart } = useGlobalContext()
+  const { cart, clearCart } = useGlobalContext()
 
   if (cart.length === 0) {
     return (
@@ -27,7 +27,7 @@ const CartContainer = () => {
         })}
       </div>
 
-      <hr />
+      <hr className='col-md-6 col-sm-10 col-xs-12 offset-md-3' />
       <footer className="card flex-col col-md-6 col-sm-10 col-xs-12 offset-md-3 mb-4 border-0">
 
         {/* cart totals */}
@@ -37,7 +37,7 @@ const CartContainer = () => {
         </div>
 
         <div className='mx-auto'>
-          <button className="btn btn btn-outline-danger ">Clear Cart</button>
+          <button className="btn btn btn-outline-danger" onClick={clearCart}>Clear Cart</button>
         </div>
       </footer>
     </section>

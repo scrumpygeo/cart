@@ -17,11 +17,14 @@ const AppProvider = ({ children }) => {
   // don't need async await as local file but use anyway as aide memoire
   const fetchData = () => {
     dispatch({ type: "DISPLAY_ITEMS", payload: cartItems })
+  }
 
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART' })
   }
 
   return (
-    <AppContext.Provider value={{ ...state }}>
+    <AppContext.Provider value={{ ...state, clearCart }}>
       {children}
     </AppContext.Provider >
   )
