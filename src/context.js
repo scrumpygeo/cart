@@ -33,6 +33,12 @@ const AppProvider = ({ children }) => {
   const removeItem = (id) => {
     dispatch({ type: 'REMOVE_ITEM', payload: id })
   }
+
+  // run this every time cart changes
+  useEffect(() => {
+    dispatch({ type: 'GET_TOTALS' })
+  }, [state.cart])
+
   return (
     <AppContext.Provider value={{ ...state, clearCart, removeItem, increaseItem, decreaseItem }}>
       {children}

@@ -5,7 +5,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
   const { removeItem, increaseItem, decreaseItem } = useGlobalContext()
   return (
 
-    <div className="card flex-row col-md-6 col-sm-10 col-xs-12 offset-md-3 mb-4">
+    <div className="card flex-row col-md-6 col-sm-10 col-xs-12 offset-md-3 mb-4 border-0">
       <img
         src={img}
         className="w-25"

@@ -33,7 +33,6 @@ const reducer = (state, action) => {
     }).filter(item => item.amount !== 0)
     return {
       ...state, cart: newCart
-
     }
   }
   if (action.type === 'REMOVE_ITEM') {
@@ -42,8 +41,24 @@ const reducer = (state, action) => {
       cart: state.cart.filter(item => item.id !== action.payload)
     }
   }
-  return {
-    ...state
+
+  if (action.type === 'GET_TOTALS') {
+    let { total, amount } = state.cart.reduce((cartTotal, cartItem) => {
+      const { price, amount } = cartItem
+      const itemTotal = price * amount
+
+      cartTotal.total += itemTotal
+      cartTotal.amount += amount
+      return cartTotal
+    }, {
+      total: 0,
+      amount: 0
+    })
+    // add thousand separators
+    total = total.toLocaleString()
+    return {
+      ...state, total, amount
+    }
   }
   // if at end of above you reach here:
   throw new Error("⚠️ Requested action types don't exist.")
