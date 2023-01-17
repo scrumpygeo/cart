@@ -3,7 +3,7 @@ import CartItem from './CartItem'
 import { useGlobalContext } from './context'
 
 const CartContainer = () => {
-  const { cart, clearCart } = useGlobalContext()
+  const { cart, clearCart, total } = useGlobalContext()
 
   if (cart.length === 0) {
     return (
@@ -33,7 +33,7 @@ const CartContainer = () => {
         {/* cart totals */}
         <div className='d-flex justify-content-between'>
           <h4>Total: </h4>
-          <h4 className='pe-4'>£6000</h4>
+          <h4 className='pe-4'>£{total}</h4>
         </div>
 
         <div className='mx-auto'>

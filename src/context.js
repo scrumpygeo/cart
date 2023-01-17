@@ -5,6 +5,7 @@ import reducer from './reducer'
 const AppContext = React.createContext()
 
 const initialState = {
+  // loading will be used later when connecting to api; here we are using local data  
   loading: false,
   cart: cartItems,
   total: 0,
