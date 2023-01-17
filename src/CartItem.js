@@ -2,7 +2,7 @@ import React from 'react'
 import { useGlobalContext } from './context'
 
 const CartItem = ({ id, img, title, price, amount }) => {
-  const { removeItem, increaseItem } = useGlobalContext()
+  const { removeItem, increaseItem, decreaseItem } = useGlobalContext()
   return (
 
     <div className="card flex-row col-md-6 col-sm-10 col-xs-12 offset-md-3 mb-4">
@@ -20,10 +20,10 @@ const CartItem = ({ id, img, title, price, amount }) => {
         <div className="buttons h-100 d-flex flex-column justify-content-between">
           <button className="border-0 bg-transparent fs-5 font-weight-bold  text-success" onClick={() => increaseItem(id)}>&#8963;</button>
           <p className="align-self-center ">{amount}</p>
-          <button className="border-0 bg-transparent fs-5 font-weight-bold text-success" >&#709;</button>
+          <button className="border-0 bg-transparent fs-5 font-weight-bold text-success" onClick={() => decreaseItem(id)} >&#709;</button>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
